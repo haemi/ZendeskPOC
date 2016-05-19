@@ -1,0 +1,27 @@
+PODS:
+  - ZDCChat (1.2.0.1):
+    - ZDCChat/Core (= 1.2.0.1)
+    - ZDCChat/Localization (= 1.2.0.1)
+  - ZDCChat/Core (1.2.0.1)
+  - ZDCChat/Localization (1.2.0.1):
+    - ZDCChat/Core
+  - ZendeskSDK (1.5.4.1):
+    - ZendeskSDK/Core (= 1.5.4.1)
+    - ZendeskSDK/Localization (= 1.5.4.1)
+    - ZendeskSDK/Providers (= 1.5.4.1)
+  - ZendeskSDK/Core (1.5.4.1)
+  - ZendeskSDK/Localization (1.5.4.1):
+    - ZendeskSDK/Core
+  - ZendeskSDK/Providers (1.5.4.1)
+
+DEPENDENCIES:
+  - ZDCChat (~> 1.2.0.1)
+  - ZendeskSDK (~> 1.5.4.1)
+
+SPEC CHECKSUMS:
+  ZDCChat: 4c68699d6414b9a6ac92960e5303982c73d6cc41
+  ZendeskSDK: 45b7a2812a04c3c5c2510aeeeded5818e6e705a5
+
+PODFILE CHECKSUM: fa7ed5092140c774c49e4ac5d627c5bc37c33d78
+
+COCOAPODS: 1.0.0

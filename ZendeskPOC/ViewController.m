@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "ZendeskPOC-Swift.h"
 
-@interface ViewController ()
+@interface ViewController () <UIPopoverControllerDelegate>
+@property (nonatomic, strong) UIPopoverController *popoverController;
 
 @end
 
@@ -16,12 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor greenColor];
+
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Click Me" style:UIBarButtonItemStylePlain target:self action:@selector(showPopover)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)showPopover {
+    [self.popoverController dismissPopoverAnimated:NO];
+    self.popoverController = nil;
+    
+    PopoverFirstViewController *vc = [[PopoverFirstViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    self.popoverController = [[UIPopoverController alloc] initWithContentViewController:nc];
+    self.popoverController.delegate = self;
+    
+    [self.popoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem
+                                   permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                   animated:NO];
 }
 
 @end
